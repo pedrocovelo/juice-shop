@@ -1,0 +1,12 @@
+name: Hola Mundo en MAC
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  hola-mundo:
+    runs-on: self-hosted
+    steps:
+      - name: Mostrar mensaje
+        run: echo "¡Hola, mundo desde mi runner!"
