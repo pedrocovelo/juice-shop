@@ -1,0 +1,12 @@
+name: Hello World on Mac
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  say-hello:
+    runs-on: self-hosted  # Usa tu Mac como runner
+    steps:
+      - name: Mostrar mensaje en consola
+        run: echo '¡Hola Mundo desde mi Mac! 🎉'
