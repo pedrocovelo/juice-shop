@@ -1,5 +1,5 @@
 name: Snyk Dependency Scan
-run-name: sca workflow 2
+run-name: sca workflow 23
 
 on:
   push:
