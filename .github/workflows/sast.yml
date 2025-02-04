@@ -1,4 +1,5 @@
 name: Snyk Security Scan
+run-name: sast workflow
 
 on:
   push:
