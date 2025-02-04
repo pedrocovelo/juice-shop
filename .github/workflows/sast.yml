@@ -1,0 +1,22 @@
+name: Snyk Security Scan
+
+on:
+  push:
+    branches:
+      - master  # Se ejecuta cuando hay un commit en master
+  pull_request:
+      branches:
+        -master
+
+jobs:
+  security_scan:
+    runs-on: self-hosted  # Usa tu runner local
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Snyk SAST Scan
+        run: snyk code test --severity-threshold=high
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
