@@ -1,5 +1,5 @@
 name: Snyk Dependency Scan
-run-name: sca workflow 23
+run-name: sca workflow 24
 
 on:
   push:
@@ -19,8 +19,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install  # Instala las dependencias del proyecto
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # Usa la versión estable
+
 
       - name: Run Snyk SCA Scan
         run: snyk test --severity-threshold=high || true  # Evita que falle el pipeline
